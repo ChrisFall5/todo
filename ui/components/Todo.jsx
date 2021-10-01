@@ -51,7 +51,7 @@ const Todo = () => {
   }
 
   return (
-    <div>
+    <div className="todo-list">
       <Header dividing size="large">To-Do List</Header>
       <List>
         {loading &&
@@ -62,9 +62,10 @@ const Todo = () => {
             return (
               <List.Item key={todo.id}>
                 <Checkbox
-                  label={todo.text}
-                  checked={todo.isComplete}
-                  onClick={() => markItemComplete({ variables: { id: todo.id, complete: !todo.isComplete } })}
+                  className = "todo-text"
+                  label = {todo.text}
+                  checked = {todo.isComplete}
+                  onClick = {() => markItemComplete({ variables: { id: todo.id, complete: !todo.isComplete } })}
                 />
                 <Icon
                   name="delete"
@@ -78,7 +79,12 @@ const Todo = () => {
         })}
       </List>
       <Form onSubmit={onSubmit} className="todo-input" >
-        <Form.Input type="text" value={todoInput} onChange={onInputChange} />
+        <Form.Input
+          type = "text"
+          value = {todoInput}
+          onChange = {onInputChange}
+          placeholder = "Enter a new to-do item`"
+        />
         <Form.Button type="submit">Add To-Do</Form.Button>
       </Form>
     </div>
@@ -86,3 +92,4 @@ const Todo = () => {
 };
 
 export default Todo;
+``

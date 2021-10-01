@@ -1,18 +1,17 @@
-#root {
-  text-align: center;
-}
-
 .ui.item {
   padding-right: 1em;
   display: inline;
 }
 
-.todo-input {
-  margin: auto;
-  width: 25%;
+.ui.list .list>.item>i.icon, .ui.list>.item>i.icon {
+  float: right;
 }
 
-.ui.list .list>.item>i.icon, .ui.list>.item>i.icon {
-  display: inline-block;
-  margin-left: 0.5em;
+.todo-text {
+  width: 95%;
+}
+
+.todo-list {
+  margin: auto;
+  width: 50%;
 }
