@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "server": "nodemon --exec babel-node src/index.js",
-    "app": "parcel ui/app.html -d static"
+    "app": "parcel ui/app.html -d static",
+    "dev": "yarn server & yarn app"
   },
   "keywords": [],
   "author": "",

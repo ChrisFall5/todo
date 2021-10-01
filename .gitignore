@@ -3,3 +3,9 @@ node_modules/
 
 # Built Assets
 .cache
+
+# Yarn Error Log
+.yarn-error.log
+
+# Static Folder
+static/
