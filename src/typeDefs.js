@@ -9,8 +9,9 @@ export const typeDefs = gql`
   }
 
   type Query {
-    todos: [Todo!]!
+    getTodos: [Todo!]!
     getTodo(id: String!): Todo!
+    getDeletedTodos: [Todo!]!
   }
 
   type Mutation {

@@ -2,8 +2,9 @@ import { Todo } from './models/Todo'
 
 export const resolvers = {
   Query: {
-    todos: () => Todo.find(),
-    getTodo: (_, { id }) => Todo.findById({ _id: id })
+    getTodos: () => Todo.find({ isDeleted: false }),
+    getTodo: (_, { id }) => Todo.findById({ _id: id }),
+    getDeletedTodos: () => Todo.find({ isDeleted: true })
   },
   Mutation: {
     createTodo: (_, { text }) => {
