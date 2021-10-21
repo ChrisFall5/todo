@@ -80,9 +80,11 @@ const Todo = () => {
       {completedTodos && completedTodos.length > 0 &&
         <TodoList todos={completedTodos} markItemComplete={markItemComplete} deleteTodo={deleteTodo} />
       }
-      <Divider />
       {todos && todos.length > 0 &&
-        <TodoList todos={todos} markItemComplete={markItemComplete} deleteTodo={deleteTodo} />
+        <>
+          <Divider />
+          <TodoList todos={todos} markItemComplete={markItemComplete} deleteTodo={deleteTodo} />
+        </>
       }
       <Form onSubmit={onSubmit} className="todo-input" >
         <Form.Input
@@ -100,7 +102,7 @@ const Todo = () => {
         <Accordion>
           <Accordion.Title active={showDeleted} onClick={() => setShowDeleted(!showDeleted)}>
             <Icon name='dropdown'/>
-            Show Deleted Todos
+            {showDeleted ? 'Hide' : 'Show'} Deleted Todos
           </Accordion.Title>
           <Accordion.Content active={showDeleted}>
             <TodoList todos={deletedTodos} />
