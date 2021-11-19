@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders deleted todo list correctly 1`] = `
+<div
+  className="ui list"
+  role="list"
+>
+  <div
+    className="item"
+    onClick={[Function]}
+    role="listitem"
+  >
+    <div
+      className="ui disabled checkbox todo-text"
+      onChange={[Function]}
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+    >
+      <input
+        checked={false}
+        className="hidden"
+        disabled={true}
+        readOnly={true}
+        tabIndex={-1}
+        type="checkbox"
+      />
+      <label>
+        Delete Me
+      </label>
+    </div>
+  </div>
+  <div
+    className="item"
+    onClick={[Function]}
+    role="listitem"
+  >
+    <div
+      className="ui checked disabled checkbox todo-text"
+      onChange={[Function]}
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+    >
+      <input
+        checked={true}
+        className="hidden"
+        disabled={true}
+        readOnly={true}
+        tabIndex={-1}
+        type="checkbox"
+      />
+      <label>
+        Test todo input
+      </label>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders non-deleted todo list correctly 1`] = `
+<div
+  className="ui list"
+  role="list"
+>
+  <div
+    className="item"
+    onClick={[Function]}
+    role="listitem"
+  >
+    <div
+      className="ui checked checkbox todo-text"
+      onChange={[Function]}
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+    >
+      <input
+        checked={true}
+        className="hidden"
+        readOnly={true}
+        tabIndex={0}
+        type="checkbox"
+      />
+      <label>
+        Test Todo
+      </label>
+    </div>
+    <i
+      aria-hidden="true"
+      className="delete link icon deleteButton"
+      onClick={[Function]}
+    />
+  </div>
+  <div
+    className="item"
+    onClick={[Function]}
+    role="listitem"
+  >
+    <div
+      className="ui checkbox todo-text"
+      onChange={[Function]}
+      onClick={[Function]}
+      onMouseDown={[Function]}
+      onMouseUp={[Function]}
+    >
+      <input
+        checked={false}
+        className="hidden"
+        readOnly={true}
+        tabIndex={0}
+        type="checkbox"
+      />
+      <label>
+        Test Todo 2
+      </label>
+    </div>
+    <i
+      aria-hidden="true"
+      className="delete link icon deleteButton"
+      onClick={[Function]}
+    />
+  </div>
+</div>
+`;

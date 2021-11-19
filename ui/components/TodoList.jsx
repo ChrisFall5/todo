@@ -1,9 +1,10 @@
 import React from "react";
+import PropTypes from "prop-types";
 import {
-    Checkbox,
-    List,
-    Icon
-  } from 'semantic-ui-react';
+  Checkbox,
+  List,
+  Icon
+} from 'semantic-ui-react';
 
 const TodoList = ({ todos, markItemComplete, deleteTodo }) => (
   <List>
@@ -39,5 +40,16 @@ const TodoList = ({ todos, markItemComplete, deleteTodo }) => (
     })}
   </List>
 );
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.object).isRequired,
+  markItemComplete: PropTypes.func,
+  deleteTodo: PropTypes.func,
+};
+
+TodoList.defaultProps = {
+  markItemComplete: () => {},
+  deleteTodo: () => {},
+};
 
 export default TodoList;
