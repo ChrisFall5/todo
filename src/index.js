@@ -1,8 +1,12 @@
-import { ApolloServer } from 'apollo-server-express';
+import { ApolloServer } from '@apollo/server';
+import { expressMiddleware } from '@apollo/server/express4';
 import express from 'express';
 import mongoose from 'mongoose';
-import { resolvers } from './resolvers';
-import { typeDefs } from './typeDefs';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+
+import { resolvers } from './resolvers.js';
+import { typeDefs } from './typeDefs.js';
 
 const startServer = async () => {
   const app = express();
@@ -11,13 +15,19 @@ const startServer = async () => {
     typeDefs,
     resolvers
   });
-  
-  server.applyMiddleware({ app });
 
-  await mongoose.connect('mongodb://localhost:27017/todo', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+  await server.start();
+
+  app.use(
+    cors(),
+    bodyParser.json(),
+    expressMiddleware(server)
+  );
+
+  await mongoose.connect('mongodb://127.0.0.1:27017/todo');
   
   app.listen({ port: 4000 }, () => {
-    console.log(`Server ready at http://localhost:4000${server.graphqlPath}`);
+    console.log('Server ready at http://localhost:4000/graphql');
   });
 }
 

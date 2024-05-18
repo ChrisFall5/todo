@@ -1,17 +1,17 @@
-import { Todo } from './models/Todo'
+import { Todo } from './models/Todo.js'
 
 export const resolvers = {
   Query: {
-    getTodos: () => Todo.find({ isDeleted: false }),
-    getTodo: (_, { id }) => Todo.findById({ _id: id }),
-    getDeletedTodos: () => Todo.find({ isDeleted: true })
+    getTodos: async () => await Todo.find({ isDeleted: false }),
+    getTodo: async (_, { id }) => await Todo.findById({ _id: id }),
+    getDeletedTodos: async () => await Todo.find({ isDeleted: true })
   },
   Mutation: {
-    createTodo: (_, { text }) => {
+    createTodo: async (_, { text }) => {
       const todo = new Todo({ text });
-      return todo.save();
+      return await todo.save();
     },
-    markComplete: (_, { id, complete }) => Todo.findOneAndUpdate({ _id: id }, { $set: { isComplete: complete } }),
-    deleteTodo: (_, { id }) => Todo.findOneAndUpdate({ _id: id }, { $set: { isDeleted: true } }),
+    markComplete: async (_, { id, complete }) => await Todo.findOneAndUpdate({ _id: id }, { $set: { isComplete: complete } }),
+    deleteTodo: async (_, { id }) => await Todo.findOneAndUpdate({ _id: id }, { $set: { isDeleted: true } }),
   }
-}
+};

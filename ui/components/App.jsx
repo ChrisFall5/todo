@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Todo from './Todo'
+import { ApolloClient, InMemoryCache, HttpLink, ApolloProvider } from '@apollo/client';
+
 import '../styles/index.scss';
-import { ApolloClient, InMemoryCache, HttpLink } from 'apollo-boost';
-import { ApolloProvider } from 'react-apollo';
 
 const App = () => {
   const link = new HttpLink({
@@ -22,4 +22,5 @@ const App = () => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const root = createRoot(document.getElementById('root'));
+root.render(<App />);

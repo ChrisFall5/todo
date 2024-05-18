@@ -2,7 +2,7 @@
 node_modules/
 
 # Built Assets
-.cache
+.parcel-cache
 
 # Yarn Error Log
 .yarn-error.log
