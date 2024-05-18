@@ -8,7 +8,7 @@ import {
   Accordion,
   Icon
 } from 'semantic-ui-react';
-import { useQuery, useMutation } from 'react-apollo';
+import { useQuery, useMutation } from '@apollo/client';
 
 import GET_TODOS from '../graphql/queries/getTodos';
 import GET_DELETED_TODOS from '../graphql/queries/getDeletedTodos';
