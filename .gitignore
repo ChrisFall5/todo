@@ -5,7 +5,7 @@ node_modules/
 .parcel-cache
 
 # Yarn Error Log
-.yarn-error.log
+yarn-error.log
 
 # Static Folder
 static/
